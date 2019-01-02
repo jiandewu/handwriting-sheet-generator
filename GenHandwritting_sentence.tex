@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\let\oldthepage\thepage
+\renewcommand*\thepage{\small{\ttfamily-- \oldthepage\ --}}
+\makeatletter
+\newcommand\HUGE{\@setfontsize\Huge{25}{33}}
+\makeatother
+\usepackage[top=0.5in,bottom=0.7in,left=0.5in,right=0.5in]{geometry}
+\setlength\parindent{0pt}
+\setlength{\parskip}{0em}
+\usepackage{tikz}
+  \usetikzlibrary{calc}
+\usepackage{fontspec}
+  \setmainfont{DN Manuscript}
+\usepackage{setspace}
+\setstretch{1.5}
+\newcommand{\baseheight}{-0.1ex}
+\newcommand{\lowercaseheight}{1ex}
+\newcommand{\uppercaseheight}{2ex}
+\newcommand{\descenderdepth}{-0.6ex}
+\usepackage{lineno}
+\newenvironment{drillsheet}{
+    \setlength\linenumbersep{0pt}
+    \renewcommand{\thelinenumber}{
+        \begin{tikzpicture}[overlay]
+                \draw [line width=0.25mm] ((0.85ex,\baseheight) -- ++(\textwidth,0);
+                \draw [line width=0.03mm,dashed] ((0.85ex,\lowercaseheight) -- ++(\textwidth,0);
+                \draw [line width=0.03mm] (0.85ex,\uppercaseheight) -- ++(\textwidth,0);
+                %\draw [ultra thin] (0.85ex,\descenderdepth) -- ++(\textwidth,0);
+                \draw [line width=0.25mm] (0.85ex,{-2.0 * \uppercaseheight + \baseheight}) --                 ++(\textwidth,0);
+                \draw [line width=0.03mm,dashed] (0.85ex,{-2.0 * \uppercaseheight + \lowercaseheight}) --                 ++(\textwidth,0);
+                \draw [line width=0.03mm] (0.85ex,{-2.0 * \uppercaseheight + \uppercaseheight}) --                 ++(\textwidth,0);
+                %\draw [ultra thin] (0.85ex,{-1.8 * \uppercaseheight + \descenderdepth}) --                 ++(\textwidth,0);
+        \end{tikzpicture}
+    }
+    \renewcommand\linenumberfont{\normalfont\color{black}}
+    \begin{linenumbers}
+        \color{black}
+}{
+    \end{linenumbers}
+}
+\linespread{2.2}
+\usepackage[none]{hyphenat}
+\usepackage[document]{ragged2e}
+\begin{document}
+\HUGE
+\begin{drillsheet}
+\begin{flushleft}
+Do not interrupt grown-ups who are speaking with each other unless there is an emergency. They will notice you and respond when they are finished talking.
+
+If you do need to get somebody’s attention right away, the phrase “excuse me” is the most polite way for you to enter the conversation.
+
+When receiving something, say “Thank you.”
+
+When you have any doubt about doing something, ask permission first. It can save you from many hours of grief later.
+
+The world is not interested in what you dislike. Keep negative opinions to yourself, or between you and your friends, and out of earshot of adults.
+
+\clearpage
+\end{flushleft}
+\end{drillsheet}
+\end{document} 

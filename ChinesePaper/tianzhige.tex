@@ -1,0 +1,45 @@
+\documentclass[landscape]{article}
+
+\usepackage[top=1.0in, bottom=1.0in, left=1in, right=1in]{geometry}
+\usepackage{xeCJK}
+\setCJKmainfont{KaiTi}
+
+\usepackage{tikz}
+
+% \grid for a single character
+\newcommand\grid[1]{%
+\begin{tikzpicture}[baseline=(char.base)]
+  \path[use as bounding box]
+    (0,0) rectangle (2em,2em);
+  \draw[help lines,step=1em]
+    (0,0) grid (2em,2em);
+  \draw[help lines,dashed]
+    (0,0) -- (2em,2em)  (0,2em) -- (2em,0);
+  \node[inner sep=0pt,anchor=base west]
+    (char) at (0em,\gridraiseamount) {#1};
+\end{tikzpicture}}
+
+% \gridraiseamount is a font-specific value
+\newcommand\gridraiseamount{0.12em}
+
+% \Grid for a CJK string
+\makeatletter
+\newcommand\Grid[1]{%
+  \@tfor\z:=#1\do{\grid{\z}}}
+\makeatother
+
+\pagestyle{empty}
+\begin{document}
+\begin{center}%
+{\fontsize{34pt}{\baselineskip}\selectfont
+\xeCJKsetup{PunctStyle=plain}
+% .\\
+\grid{} \grid{} \grid{} \grid{} \grid{} \grid{} \grid{} \grid{}\\[0.4cm]
+\grid{} \grid{} \grid{} \grid{} \grid{} \grid{} \grid{} \grid{}\\[0.4cm]
+\grid{} \grid{} \grid{} \grid{} \grid{} \grid{} \grid{} \grid{}\\[0.4cm]
+\grid{} \grid{} \grid{} \grid{} \grid{} \grid{} \grid{} \grid{}\\[0.4cm]
+\grid{} \grid{} \grid{} \grid{} \grid{} \grid{} \grid{} \grid{}\\[0.4cm]
+\grid{} \grid{} \grid{} \grid{} \grid{} \grid{} \grid{} \grid{}}
+\end{center}
+
+\end{document} 

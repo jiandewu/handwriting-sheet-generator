@@ -1,0 +1,47 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor and IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python cache and local environments
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# LaTeX auxiliary/build files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.fmt
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+
+# Temporary files produced by the generator scripts
+hndstnc.*
+tmphand.*
+
