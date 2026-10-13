@@ -24,7 +24,7 @@
   - `ragged2e`
   - `xeCJK`（中文模板）
   - `dashrule`、`forloop`（部分英文模板）
-- 模板指定的字体，例如 `DN Manuscript`、`kiddySans`、`Print Dashed` 和 `KaiTi`。
+- 模板指定的字体，例如 `DN Manuscript`、`kiddySans`、`Print Dashed` 和 `KaiTi`。其中 `DN Manuscript` 是 Educational Fontware, Inc. 的商业字体，`Lakesight` 仅限个人使用，二者均未随仓库提供，需要自行获取授权并安装。
 - 运行现有 Python 脚本时需要 Python 2。脚本只使用 Python 标准库，但包含 Python 2 的 `print` 语法。
 - 脚本调用 `mv` 和 `rm`，因此原始版本更适合 Linux、macOS、WSL 或 Git Bash 环境。
 
@@ -69,6 +69,10 @@ python2 GenHandwritting_sentence.py
 - 部分字体名称必须与操作系统中安装后的名称完全一致。
 - 个别 LaTeX 模板可能需要根据本机纸张大小、字体或 TeX 发行版调整。
 - `font/` 和 `cursive/` 中的字体来自不同作者，使用和再分发前请分别检查随附许可或原始授权条款。
+
+## 许可证
+
+仓库中的原创脚本和模板采用 MIT 许可证，见 `LICENSE`。`font/` 和 `cursive/` 中的第三方字体不在 MIT 许可范围内，按各自随附的许可或作者条款使用；其中部分字体仅允许个人或教育用途，不得用于商业用途。
 
 ## Git 忽略策略
 
